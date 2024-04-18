@@ -8,7 +8,7 @@ export async function getMovie() {
     const select = searchForm.querySelector('#filter').value;
 
     const url = `https://api.themoviedb.org/3/search/${select}?query=${search}&api_key=${apiKey}`;
-   
+
     const moviesDiv = document.getElementById('movies');
     moviesDiv.innerHTML = '';
 
@@ -44,23 +44,27 @@ export async function getMovie() {
         for (let i = 0; i < 10; i++) {
             const actorDiv = document.createElement('div');
             const actorname = document.createElement('p');
-            const actorMovies = document.createElement('p');
+            const knownfor = document.createElement('div');
             const actorimage = document.createElement('img');
+            
             const imageUrl = `https://image.tmdb.org/t/p/w200/`;
-
-            actorDiv.append(actorname,actorMovies,actorimage);
-            moviesDiv.append(actorDiv);
-
+            
             console.log(data);
 
-            actorname.innerText=data.results[i].name;
+            actorname.innerText = data.results[i].name;
 
-            for(const {title} of data.results[i].known_for){
-            actorMovies.innerText=title
-            console.log(title)
-        }
-            
-            actorimage.src = imageUrl + data.results[i].profile_path
+            for (const { title , media_type} of data.results[i].known_for) {
+
+                const actorMovies = document.createElement('p');
+                actorMovies.innerText = title + ' ' + media_type;
+                
+                knownfor.append(actorMovies);
+               
+            }
+
+            actorDiv.append(actorname,knownfor,actorimage);
+            moviesDiv.append(actorDiv);
+            actorimage.src = imageUrl + data.results[i].profile_path;
 
         }
     }
