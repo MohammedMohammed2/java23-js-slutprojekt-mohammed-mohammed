@@ -1,0 +1,32 @@
+
+a{
+    display: inline;
+    padding: 8px;
+    border-radius:10px;
+    border-style: solid;
+    border-color:black;
+    background-color: #dce30f;
+    text-decoration: solid;
+  }
+nav{
+    background-color: rgb(129, 11, 197);
+    padding: 8px;
+}
+form{
+    display: inline;
+    margin-left:50%;
+    margin-right: auto;
+}
+body{
+    background-color:rgb(2, 50, 122);
+}
+div{
+    border-style: solid;
+    border-color: rgb(11, 1, 12);
+    display:grid;
+    justify-content: center;
+
+}
+p{
+    color: aquamarine;
+}

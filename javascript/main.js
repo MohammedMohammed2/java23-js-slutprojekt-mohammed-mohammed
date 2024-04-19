@@ -1,27 +1,38 @@
-import {getTop10RatedMovies} from "../modules/Top10ratedmovies.js";
-import { getPopularMovies } from "../modules/popular.js";
-import { getMovie } from "../modules/search.js";
+import { RatedOrPopMovies,search } from "../modules/fetch.js";
+import { getmovies,getperson, getTopRatedOrPopMovies } from "../modules/reaults.js";
 
 const popularMovie = document.getElementById('popular');
 const Top10Movies = document.getElementById('Top10RatedMovies');
+const form = document.querySelector('form');
 
 
-
-
-
-popularMovie.addEventListener('click', (event)=>{
+popularMovie.addEventListener('click', (event) => {
     event.preventDefault();
-    getPopularMovies();
+    RatedOrPopMovies('popular').then(getTopRatedOrPopMovies);
 });
 
-Top10Movies.addEventListener('click', (events)=>{
+Top10Movies.addEventListener('click', (events) => {
     events.preventDefault();
-    getTop10RatedMovies();
+    RatedOrPopMovies('top_rated').then(getTopRatedOrPopMovies);
 });
 
-addEventListener('submit',(event)=>{
-    event.preventDefault();
-    getMovie();
 
-})
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const find = document.querySelector('input').value;
+    const select = document.querySelector('#filter').value;
+
+    const movie = 'movie';
+    const person = 'person';
+  
+
+    if (select == movie) {
+        search(find).then(getmovies);
+    }
+    if (select == person) {
+        search(find).then(getperson);
+    }
+
+});
 
