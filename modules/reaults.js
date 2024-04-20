@@ -5,7 +5,7 @@ export function getTopRatedOrPopMovies(find) {
 
     const moviesDiv = document.getElementById('movies');
     moviesDiv.innerHTML = '';
-    
+
     for (const { title, release_date, poster_path } of find) {
         const filmsDiv = document.createElement('div');
         const movieTitle = document.createElement('p');
@@ -54,7 +54,14 @@ export function getperson(find) {
 
         actorDiv.append(actorname, knownfor, actorimage);
         moviesDiv.append(actorDiv);
-        actorimage.src = imageUrl + profile_path;
+        if(profile_path!=null){
+            actorimage.src = imageUrl + profile_path;
+        }
+        else{
+            actorimage.src='/images/unknown.png';
+            console.log('lol')
+        }
+        
 
     }
 }
