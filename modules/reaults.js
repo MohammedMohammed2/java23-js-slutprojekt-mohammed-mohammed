@@ -7,6 +7,7 @@ export function getTopRatedOrPopMovies(find) {
     moviesDiv.innerHTML = '';
 
     for (const { title, release_date, poster_path } of find) {
+
         const filmsDiv = document.createElement('div');
         const movieTitle = document.createElement('p');
         const releaseDate = document.createElement('p');
@@ -45,7 +46,7 @@ export function getperson(find) {
 
         const imageUrl = `https://image.tmdb.org/t/p/w200/`;
 
-        actorname.innerText = name;
+        actorname.innerText = 'Name:' + ' ' + name;
 
         for (const { title, name, media_type } of known_for) {
 
@@ -62,6 +63,7 @@ export function getperson(find) {
 
         actorDiv.append(actorname, knownfor, actorimage);
         moviesDiv.append(actorDiv);
+
         if (profile_path != null) {
             actorimage.src = imageUrl + profile_path;
         }
@@ -88,20 +90,23 @@ export function getmovies(find) {
         console.log(error);
     }
 
-    for (const { title, release_date, poster_path } of find){
-        
+    for (const { title, overview, release_date, poster_path } of find) {
+
         const filmsDiv = document.createElement('div');
         const movieTitle = document.createElement('p');
         const releaseDate = document.createElement('p');
+        const description = document.createElement('p');
         const moviePoster = document.createElement('img');
         const imageUrl = `https://image.tmdb.org/t/p/w200/`;
 
-        filmsDiv.append(movieTitle, releaseDate, moviePoster);
+        filmsDiv.append(movieTitle, description, releaseDate, moviePoster);
         moviesDiv.append(filmsDiv);
 
 
-        movieTitle.innerText = title;
-        releaseDate.innerText = release_date;
+        movieTitle.innerText = 'Title:' + ' ' + title;
+        description.innerText = 'Description:' + ' ' + overview;
+        releaseDate.innerText = 'Release date:' + ' ' + release_date;
+
         moviePoster.src = imageUrl + poster_path;
 
     }

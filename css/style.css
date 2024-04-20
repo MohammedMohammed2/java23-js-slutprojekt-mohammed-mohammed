@@ -23,13 +23,16 @@ body{
 div{
     border-style: solid;
     border-color: rgb(11, 1, 12);
-    display:grid;
-    justify-content: center;
+    display:block;
+    background-color: rgb(85, 157, 17);
 
 }
 p{
-    color: aquamarine;
+    color: rgb(1, 25, 17);
+    font-size: large;
+  
 }
 img{
     width: 200px;
+    
 }
