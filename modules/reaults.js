@@ -29,7 +29,15 @@ export function getperson(find) {
     const moviesDiv = document.getElementById('movies');
     moviesDiv.innerHTML = '';
 
+    if (find == 0) {
+        const error = document.createElement('p');
+        error.innerText = 'actor not found';
+        moviesDiv.append(error);
+        console.log(error);
+    }
+
     for (const { name, profile_path, known_for } of find) {
+
         const actorDiv = document.createElement('div');
         const actorname = document.createElement('p');
         const knownfor = document.createElement('div');
@@ -54,24 +62,34 @@ export function getperson(find) {
 
         actorDiv.append(actorname, knownfor, actorimage);
         moviesDiv.append(actorDiv);
-        if(profile_path!=null){
+        if (profile_path != null) {
             actorimage.src = imageUrl + profile_path;
         }
-        else{
-            actorimage.src='/images/unknown.png';
-            console.log('lol')
+        else {
+            actorimage.src = '/images/unknown.png';
+
         }
-        
+
 
     }
+
+
 }
 
 export function getmovies(find) {
 
     const moviesDiv = document.getElementById('movies');
     moviesDiv.innerHTML = '';
-    
-    for (const { title, release_date, poster_path } of find) {
+
+    if (find == 0) {
+        const error = document.createElement('p');
+        error.innerText = 'movie not found';
+        moviesDiv.append(error);
+        console.log(error);
+    }
+
+    for (const { title, release_date, poster_path } of find){
+        
         const filmsDiv = document.createElement('div');
         const movieTitle = document.createElement('p');
         const releaseDate = document.createElement('p');

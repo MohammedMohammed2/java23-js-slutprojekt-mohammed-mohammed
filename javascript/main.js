@@ -1,5 +1,5 @@
-import { RatedOrPopMovies,search } from "../modules/fetch.js";
-import { getmovies,getperson, getTopRatedOrPopMovies } from "../modules/reaults.js";
+import { RatedOrPopMovies, search } from "../modules/fetch.js";
+import { getmovies, getperson, getTopRatedOrPopMovies } from "../modules/reaults.js";
 
 const popularMovie = document.getElementById('popular');
 const Top10Movies = document.getElementById('Top10RatedMovies');
@@ -25,7 +25,7 @@ form.addEventListener('submit', (event) => {
 
     const movie = 'movie';
     const person = 'person';
-  
+
 
     if (select == movie) {
         search(find).then(getmovies);
