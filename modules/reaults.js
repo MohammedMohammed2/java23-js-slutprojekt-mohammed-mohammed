@@ -18,8 +18,8 @@ export function getTopRatedOrPopMovies(find) {
         moviesDiv.append(filmsDiv);
 
 
-        movieTitle.innerText = title;
-        releaseDate.innerText = release_date;
+        movieTitle.innerText = 'Title:' +' ' + title;
+        releaseDate.innerText = 'Release date:' +' '+ release_date;
         moviePoster.src = imageUrl + poster_path;
 
     }
