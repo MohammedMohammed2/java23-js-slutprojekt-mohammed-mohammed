@@ -1,4 +1,4 @@
-import { RatedOrPopMovies, search } from "../modules/fetch.js";
+import { RatedOrPopMovies, search } from "../modules/fetchAPI.js";
 import { getmovies, getperson, getTopRatedOrPopMovies } from "../modules/reaults.js";
 
 const popularMovie = document.getElementById('popular');

@@ -1,6 +1,3 @@
-
-
-
 export function getTopRatedOrPopMovies(find) {
 
     const moviesDiv = document.getElementById('movies');
@@ -18,8 +15,8 @@ export function getTopRatedOrPopMovies(find) {
         moviesDiv.append(filmsDiv);
 
 
-        movieTitle.innerText = 'Title:' +' ' + title;
-        releaseDate.innerText = 'Release date:' +' '+ release_date;
+        movieTitle.innerText = 'Title:' + ' ' + title;
+        releaseDate.innerText = 'Release date:' + ' ' + release_date;
         moviePoster.src = imageUrl + poster_path;
 
     }
@@ -34,34 +31,39 @@ export function getperson(find) {
         const error = document.createElement('p');
         error.innerText = 'actor not found';
         moviesDiv.append(error);
-        console.log(error);
     }
 
-    for (const { name, profile_path, known_for } of find) {
+    for (const { name, profile_path, known_for, known_for_department } of find) {
 
         const actorDiv = document.createElement('div');
         const actorname = document.createElement('p');
-        const knownfor = document.createElement('div');
+        const jobTitle = document.createElement('p');
+        const knownfor = document.createElement('p');
         const actorimage = document.createElement('img');
 
         const imageUrl = `https://image.tmdb.org/t/p/w200/`;
 
         actorname.innerText = 'Name:' + ' ' + name;
+        jobTitle.innerText = 'Job:' + ' ' + known_for_department;
+
+        if (known_for_department == null) {
+            jobTitle.innerText = 'Job:' + ' ' + 'not sepcified';
+        }
 
         for (const { title, name, media_type } of known_for) {
 
             const actorMovies = document.createElement('p');
             if (title == undefined) {
-                actorMovies.innerText = name + ' ' + media_type;
+                actorMovies.innerText = 'title' + ' ' + name + ' ' + ',' + ' type: ' + ' ' + media_type;
             }
             else {
-                actorMovies.innerText = title + ' ' + media_type;
+                actorMovies.innerText = 'Title:' + ' ' + title + ' ' + ',' + ' ' + 'type:' + ' ' + media_type;
             }
             knownfor.append(actorMovies);
 
         }
 
-        actorDiv.append(actorname, knownfor, actorimage);
+        actorDiv.append(actorname, jobTitle, knownfor, actorimage);
         moviesDiv.append(actorDiv);
 
         if (profile_path != null) {
@@ -69,13 +71,8 @@ export function getperson(find) {
         }
         else {
             actorimage.src = '/images/unknown.png';
-
         }
-
-
     }
-
-
 }
 
 export function getmovies(find) {
