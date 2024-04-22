@@ -69,7 +69,7 @@ export function showPerson(find) {
             actorimageImgTag.src = imageUrl + profile_path;
         }
         else {
-            actorimageImgTag.src = './images/unknown.PNG';
+            actorimageImgTag.src = './images/unknown.jpg';
         }
     }
 }
