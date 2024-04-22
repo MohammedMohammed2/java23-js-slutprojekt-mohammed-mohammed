@@ -2,7 +2,7 @@ const apiKey = 'e0a821dc57308d9e6156bba4206c65db';
 
 const moviesDiv = document.getElementById('movies');
 
-export async function RatedOrPopMovies(parameter) {
+export async function getTop10RatedOrPopMovies(parameter) {
     moviesDiv.innerHTML = '';
 
     const url = `https://api.themoviedb.org/3/movie/${parameter}?language=en-US&page=1&api_key=${apiKey}`;
@@ -14,7 +14,7 @@ export async function RatedOrPopMovies(parameter) {
 
 }
 
-export async function search(find) {
+export async function getSearch(find) {
 
 
     const select = document.querySelector('#filter').value;

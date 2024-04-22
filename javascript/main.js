@@ -1,5 +1,5 @@
-import { RatedOrPopMovies, search } from "../modules/fetchAPI.js";
-import { getmovies, getperson, getTopRatedOrPopMovies } from "../modules/reaults.js";
+import { getTop10RatedOrPopMovies, getSearch } from "../modules/fetchAPI.js";
+import { showMovies, showPerson, showTopRatedOrPopMovies } from "../modules/reaults.js";
 
 const popularMovie = document.getElementById('popular');
 const Top10Movies = document.getElementById('Top10RatedMovies');
@@ -8,12 +8,12 @@ const form = document.querySelector('form');
 
 popularMovie.addEventListener('click', (event) => {
     event.preventDefault();
-    RatedOrPopMovies('popular').then(getTopRatedOrPopMovies);
+    getTop10RatedOrPopMovies('popular').then(showTopRatedOrPopMovies);
 });
 
 Top10Movies.addEventListener('click', (events) => {
     events.preventDefault();
-    RatedOrPopMovies('top_rated').then(getTopRatedOrPopMovies);
+    getTop10RatedOrPopMovies('top_rated').then(showTopRatedOrPopMovies);
 });
 
 
@@ -28,10 +28,10 @@ form.addEventListener('submit', (event) => {
 
 
     if (select == movie) {
-        search(find).then(getmovies);
+        getSearch(find).then(showMovies);
     }
     if (select == person) {
-        search(find).then(getperson);
+        getSearch(find).then(showPerson);
     }
 
 });

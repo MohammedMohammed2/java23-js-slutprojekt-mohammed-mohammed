@@ -1,4 +1,4 @@
-export function getTopRatedOrPopMovies(find) {
+export function showTopRatedOrPopMovies(find) {
 
     const moviesDiv = document.getElementById('movies');
     moviesDiv.innerHTML = '';
@@ -24,7 +24,7 @@ export function getTopRatedOrPopMovies(find) {
     }
 }
 
-export function getperson(find) {
+export function showPerson(find) {
 
     const moviesDiv = document.getElementById('movies');
     moviesDiv.innerHTML = '';
@@ -72,12 +72,12 @@ export function getperson(find) {
             actorimage.src = imageUrl + profile_path;
         }
         else {
-            actorimage.src = '.../images/unknown.png';
+            actorimage.src = '../images/unknown.png';
         }
     }
 }
 
-export function getmovies(find) {
+export function showMovies(find) {
 
     const moviesDiv = document.getElementById('movies');
     moviesDiv.innerHTML = '';
