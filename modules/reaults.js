@@ -6,21 +6,18 @@ export function showTopRatedOrPopMovies(find) {
     for (const { title, release_date, poster_path } of find) {
 
         const filmsDiv = document.createElement('div');
-        const movieTitle = document.createElement('p');
-        const releaseDate = document.createElement('p');
-        const moviePoster = document.createElement('img');
+        const movieTitlePTag = document.createElement('p');
+        const releaseDatePTag = document.createElement('p');
+        const moviePosterImgTag = document.createElement('img');
         const imageUrl = `https://image.tmdb.org/t/p/w200/`;
 
-        filmsDiv.append(movieTitle, releaseDate, moviePoster);
+        filmsDiv.append(movieTitlePTag, releaseDatePTag, moviePosterImgTag);
         moviesDiv.append(filmsDiv);
 
 
-        movieTitle.innerText = 'Title:' + ' ' + title;
-        releaseDate.innerText = 'Release date:' + ' ' + release_date;
-        moviePoster.src = imageUrl + poster_path;
-
-    
-
+        movieTitlePTag.innerText = 'Title:' + ' ' + title;
+        releaseDatePTag.innerText = 'Release date:' + ' ' + release_date;
+        moviePosterImgTag.src = imageUrl + poster_path;
     }
 }
 
@@ -38,18 +35,18 @@ export function showPerson(find) {
     for (const { name, profile_path, known_for, known_for_department } of find) {
 
         const actorDiv = document.createElement('div');
-        const actorname = document.createElement('p');
-        const jobTitle = document.createElement('p');
-        const knownfor = document.createElement('p');
-        const actorimage = document.createElement('img');
+        const actornamePTag = document.createElement('p');
+        const jobTitlePTag = document.createElement('p');
+        const knownforPTag = document.createElement('p');
+        const actorimageImgTag = document.createElement('img');
 
         const imageUrl = `https://image.tmdb.org/t/p/w200/`;
 
-        actorname.innerText = 'Name:' + ' ' + name;
-        jobTitle.innerText = 'Job:' + ' ' + known_for_department;
+        actornamePTag.innerText = 'Name:' + ' ' + name;
+        jobTitlePTag.innerText = 'Job:' + ' ' + known_for_department;
 
         if (known_for_department == null) {
-            jobTitle.innerText = 'Job:' + ' ' + 'not sepcified';
+            jobTitlePTag.innerText = 'Job:' + ' ' + 'not sepcified';
         }
 
         for (const { title, name, media_type } of known_for) {
@@ -61,18 +58,18 @@ export function showPerson(find) {
             else {
                 actorMovies.innerText = 'Title:' + ' ' + title + ' ' + ',' + ' ' + 'type:' + ' ' + media_type;
             }
-            knownfor.append(actorMovies);
+            knownforPTag.append(actorMovies);
 
         }
 
-        actorDiv.append(actorname, jobTitle, knownfor, actorimage);
+        actorDiv.append(actornamePTag, jobTitlePTag, knownforPTag, actorimageImgTag);
         moviesDiv.append(actorDiv);
 
         if (profile_path != null) {
-            actorimage.src = imageUrl + profile_path;
+            actorimageImgTag.src = imageUrl + profile_path;
         }
         else {
-            actorimage.src = '../images/unknown.png';
+            actorimageImgTag.src = '../images/unknown.png';
         }
     }
 }
@@ -93,21 +90,21 @@ export function showMovies(find) {
     for (const { title, overview, release_date, poster_path } of find) {
 
         const filmsDiv = document.createElement('div');
-        const movieTitle = document.createElement('p');
-        const releaseDate = document.createElement('p');
-        const description = document.createElement('p');
-        const moviePoster = document.createElement('img');
+        const movieTitlePTag = document.createElement('p');
+        const releaseDatePTag = document.createElement('p');
+        const descriptionPTag = document.createElement('p');
+        const moviePosterImgTag = document.createElement('img');
         const imageUrl = `https://image.tmdb.org/t/p/w200/`;
 
-        filmsDiv.append(movieTitle, description, releaseDate, moviePoster);
+        filmsDiv.append(movieTitlePTag, descriptionPTag, releaseDatePTag, moviePosterImgTag);
         moviesDiv.append(filmsDiv);
 
 
-        movieTitle.innerText = 'Title:' + ' ' + title;
-        description.innerText = 'Description:' + ' ' + overview;
-        releaseDate.innerText = 'Release date:' + ' ' + release_date;
+        movieTitlePTag.innerText = 'Title:' + ' ' + title;
+        descriptionPTag.innerText = 'Description:' + ' ' + overview;
+        releaseDatePTag.innerText = 'Release date:' + ' ' + release_date;
 
-        moviePoster.src = imageUrl + poster_path;
+        moviePosterImgTag.src = imageUrl + poster_path;
 
     }
 }
