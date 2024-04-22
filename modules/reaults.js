@@ -1,3 +1,6 @@
+
+
+
 export function showTopRatedOrPopMovies(find) {
 
     const moviesDiv = document.getElementById('movies');
@@ -85,8 +88,7 @@ export function showMovies(find) {
         moviesDiv.append(error);
         console.log(error);
     }
-    console.log(find);
-
+ 
     for (const { title, overview, release_date, poster_path } of find) {
 
         const filmsDiv = document.createElement('div');

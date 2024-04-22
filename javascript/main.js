@@ -1,22 +1,24 @@
 import { getTop10RatedOrPopMovies, getSearch } from "../modules/fetchAPI.js";
 import { showMovies, showPerson, showTopRatedOrPopMovies } from "../modules/reaults.js";
 
-const popularMovie = document.getElementById('popular');
-const Top10Movies = document.getElementById('Top10RatedMovies');
+const popularMovieATag = document.getElementById('popular');
+const Top10MoviesATag = document.getElementById('Top10RatedMovies');
 const form = document.querySelector('form');
 
 
-popularMovie.addEventListener('click', (event) => {
+//displays results from the api depending on what the user clicked on weather its Top10RatedMovies or popular movies 
+popularMovieATag.addEventListener('click', (event) => {
     event.preventDefault();
     getTop10RatedOrPopMovies('popular').then(showTopRatedOrPopMovies);
 });
 
-Top10Movies.addEventListener('click', (events) => {
+Top10MoviesATag.addEventListener('click', (events) => {
     events.preventDefault();
     getTop10RatedOrPopMovies('top_rated').then(showTopRatedOrPopMovies);
 });
 
 
+//Searches and displays the desiered movies/actors
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
