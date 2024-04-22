@@ -19,6 +19,8 @@ export function getTopRatedOrPopMovies(find) {
         releaseDate.innerText = 'Release date:' + ' ' + release_date;
         moviePoster.src = imageUrl + poster_path;
 
+    
+
     }
 }
 
@@ -70,7 +72,7 @@ export function getperson(find) {
             actorimage.src = imageUrl + profile_path;
         }
         else {
-            actorimage.src = '/images/unknown.png';
+            actorimage.src = '../images/unknown.png';
         }
     }
 }
@@ -86,6 +88,7 @@ export function getmovies(find) {
         moviesDiv.append(error);
         console.log(error);
     }
+    console.log(find);
 
     for (const { title, overview, release_date, poster_path } of find) {
 
