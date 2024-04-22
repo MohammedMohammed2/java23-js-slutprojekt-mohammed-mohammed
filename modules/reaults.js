@@ -72,7 +72,7 @@ export function getperson(find) {
             actorimage.src = imageUrl + profile_path;
         }
         else {
-            actorimage.src = '../images/unknown.png';
+            actorimage.src = '.../images/unknown.png';
         }
     }
 }
