@@ -56,7 +56,7 @@ export function showPerson(find) {
 
             const actorMovies = document.createElement('p');
             if (title == undefined) {
-                actorMovies.innerText = 'title' + ' ' + name + ' ' + ',' + ' type: ' + ' ' + media_type;
+                actorMovies.innerText = 'title:' + ' ' + name + ' ' + ',' + ' type: ' + ' ' + media_type;
             }
             else {
                 actorMovies.innerText = 'Title:' + ' ' + title + ' ' + ',' + ' ' + 'type:' + ' ' + media_type;
