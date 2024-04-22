@@ -69,7 +69,7 @@ export function showPerson(find) {
             actorimageImgTag.src = imageUrl + profile_path;
         }
         else {
-            actorimageImgTag.src = 'java23-js-slutprojekt-mohammed-mohammed/images/unknown.png';
+            actorimageImgTag.src = './images/unknown.PNG';
         }
     }
 }

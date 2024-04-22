@@ -1,5 +1,5 @@
-import { getTop10RatedOrPopMovies, getSearch } from "./modules/fetchAPI.js";
-import { showMovies, showPerson, showTopRatedOrPopMovies } from "./modules/reaults.js";
+import { getTop10RatedOrPopMovies, getSearch } from "../modules/fetchAPI.js";
+import { showMovies, showPerson, showTopRatedOrPopMovies } from "../modules/reaults.js";
 
 const popularMovie = document.getElementById('popular');
 const Top10Movies = document.getElementById('Top10RatedMovies');
