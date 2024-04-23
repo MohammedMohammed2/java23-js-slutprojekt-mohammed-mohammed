@@ -1,6 +1,6 @@
 
 
-
+//dispays the movies with their picture and release date 
 export function showTopRatedOrPopMovies(find) {
 
     const moviesDiv = document.getElementById('movies');
@@ -24,6 +24,7 @@ export function showTopRatedOrPopMovies(find) {
     }
 }
 
+//displays the desired actor/actors as well as their name , picture and movies they are known for and their job is 
 export function showPerson(find) {
 
     const moviesDiv = document.getElementById('movies');
@@ -68,6 +69,8 @@ export function showPerson(find) {
         actorDiv.append(actornamePTag, jobTitlePTag, knownforPTag, actorimageImgTag);
         moviesDiv.append(actorDiv);
 
+        // default picture incase the desired actor doesnt have a picture
+
         if (profile_path != null) {
             actorimageImgTag.src = imageUrl + profile_path;
         }
@@ -77,6 +80,7 @@ export function showPerson(find) {
     }
 }
 
+//displays the desired movies/movie with their name, picture and description aswell as their release date  
 export function showMovies(find) {
 
     const moviesDiv = document.getElementById('movies');
@@ -88,7 +92,7 @@ export function showMovies(find) {
         moviesDiv.append(error);
         console.log(error);
     }
- 
+
     for (const { title, overview, release_date, poster_path } of find) {
 
         const filmsDiv = document.createElement('div');

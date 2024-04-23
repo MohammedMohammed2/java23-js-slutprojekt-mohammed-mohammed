@@ -3,7 +3,7 @@ const apiKey = 'e0a821dc57308d9e6156bba4206c65db';
 const moviesDiv = document.getElementById('movies');
 const errormessagePTag = document.getElementById('error');
 
-//gets data from api depending on which A Tag the user clicked on in nav bar 
+//gets data from api depending the user's choice if its top10rated or popular movies 
 export async function getTop10RatedOrPopMovies(parameter) {
 
     errormessagePTag.innerHTML = '';
@@ -23,7 +23,7 @@ export async function getTop10RatedOrPopMovies(parameter) {
 
 }
 
-//gets data from api depending on user's input
+//gets data from api depending on user's input in the search bar 
 export async function getSearch(find) {
 
     errormessagePTag.innerHTML = '';
