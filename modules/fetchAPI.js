@@ -4,13 +4,13 @@ const moviesDiv = document.getElementById('movies');
 const errormessagePTag = document.getElementById('error');
 
 //gets data from api depending the user's choice if its top10rated or popular movies 
-export async function getTop10RatedOrPopMovies(parameter) {
+export async function getTop10RatedOrPopMovies(choice) {
 
     errormessagePTag.innerHTML = '';
     try {
         moviesDiv.innerHTML = '';
 
-        const url = `https://api.themoviedb.org/3/movie/${parameter}?language=en-US&page=1&api_key=${apiKey}`;
+        const url = `https://api.themoviedb.org/3/movie/${choice}?language=en-US&page=1&api_key=${apiKey}`;
 
         const response = await fetch(url);
         const data = await response.json();

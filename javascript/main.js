@@ -2,7 +2,7 @@ import { getTop10RatedOrPopMovies, getSearch } from "../modules/fetchAPI.js";
 import { showMovies, showPerson, showTopRatedOrPopMovies } from "../modules/reaults.js";
 
 const popularMovieATag = document.getElementById('popular');
-const Top10MoviesATag = document.getElementById('Top10RatedMovies');
+const top10MoviesATag = document.getElementById('Top10RatedMovies');
 const form = document.querySelector('form');
 
 
@@ -12,7 +12,7 @@ popularMovieATag.addEventListener('click', (event) => {
     getTop10RatedOrPopMovies('popular').then(showTopRatedOrPopMovies);
 });
 
-Top10MoviesATag.addEventListener('click', (events) => {
+top10MoviesATag.addEventListener('click', (events) => {
     events.preventDefault();
     getTop10RatedOrPopMovies('top_rated').then(showTopRatedOrPopMovies);
 });
